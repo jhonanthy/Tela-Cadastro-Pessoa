@@ -1,0 +1,60 @@
+unit uPessoaController;
+
+interface
+
+uses 
+  uPessoaModel, uDmPessoa;
+
+type
+  TPessoaController = class
+  private
+    { private declarations }
+  
+  public
+    constructor Create;
+    procedure ConsultaPessoa(TextoConsulta: string; TipoPesquisa: Integer);
+    procedure CarregaControles(Pessoa: TPessoa; codigoPessoa: Integer);
+    function Inserir(Pessoa: Tpessoa; var sErro: string ): boolean;
+    function Alterar(Pessoa: Tpessoa; var sErro: string ): boolean;
+    function Excluir(codigoPessoa: Integer; var sErro: string ): boolean;
+  end;
+
+implementation
+
+
+
+{ TPessoaController }
+
+function TPessoaController.Alterar(Pessoa: Tpessoa; var sErro: string): boolean;
+begin
+  Result := DMPessoa.Alterar(Pessoa, sErro);
+end;
+
+procedure TPessoaController.CarregaControles(Pessoa: TPessoa;
+  codigoPessoa: Integer);
+begin
+  Result := DMPessoa.CarregaControles(Pessoa,codigoPessoa);
+end;
+
+procedure TPessoaController.ConsultaPessoa(TextoConsulta: string;
+  TipoPesquisa: Integer);
+begin
+  Result := DMPessoa.ConsultaPessoa(TextoConsulta,TipoPesquisa);
+end;
+
+constructor TPessoaController.Create;
+begin
+  DMPessoa := DMPessoa.Create(nil);
+end;
+
+function TPessoaController.Excluir(codigoPessoa: Integer; var sErro: string): boolean;
+begin
+  Result := DMPessoa.Excluir(codigoPessoa, sErro);
+end;
+
+function TPessoaController.Inserir(Pessoa: Tpessoa; var sErro: string): boolean;
+begin
+  Result := DMPessoa.Inserir(Pessoa, sErro);
+end;
+
+end.

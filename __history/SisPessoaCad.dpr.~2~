@@ -1,0 +1,17 @@
+program SisPessoaCad;
+
+uses
+  Vcl.Forms,
+  uCadastroPessoa in 'View\uCadastroPessoa.pas' {frmCadastro},
+  uPessoaModel in 'Model\uPessoaModel.pas',
+  uLogin in 'View\uLogin.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

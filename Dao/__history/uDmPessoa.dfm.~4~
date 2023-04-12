@@ -1,0 +1,127 @@
+object DMPessoa: TDMPessoa
+  OldCreateOrder = False
+  Height = 410
+  Width = 752
+  object ClientDataSet1: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 88
+    Top = 120
+  end
+  object ClientDataSet2: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 152
+    Top = 120
+  end
+  object ClientDataSet3: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 232
+    Top = 120
+  end
+  object ClientDataSet4: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 296
+    Top = 120
+  end
+  object FDMemTable1: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 88
+    Top = 192
+  end
+  object FDMemTable2: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 176
+    Top = 192
+  end
+  object FDMemTable3: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 232
+    Top = 208
+  end
+  object FDMemTable4: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 312
+    Top = 208
+  end
+  object FDTablePessoa: TFDTable
+    IndexFieldNames = 'PES_CODIGO'
+    Connection = DMConexao.FDConnection1
+    TableName = 'PESSOA'
+    Left = 96
+    Top = 296
+    object FDTablePessoaPES_CODIGO: TIntegerField
+      FieldName = 'PES_CODIGO'
+      Origin = 'PES_CODIGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDTablePessoaPES_NOME: TStringField
+      FieldName = 'PES_NOME'
+      Origin = 'PES_NOME'
+      Size = 50
+    end
+    object FDTablePessoaUSUARIO: TStringField
+      FieldName = 'USUARIO'
+      Origin = 'USUARIO'
+      Required = True
+      Size = 50
+    end
+    object FDTablePessoaSENHA: TStringField
+      FieldName = 'SENHA'
+      Origin = 'SENHA'
+      Size = 10
+    end
+    object FDTablePessoaDATA_INCLUSAO: TDateField
+      FieldName = 'DATA_INCLUSAO'
+      Origin = 'DATA_INCLUSAO'
+    end
+    object FDTablePessoaDATA_ALTERACAO: TDateField
+      FieldName = 'DATA_ALTERACAO'
+      Origin = 'DATA_ALTERACAO'
+    end
+  end
+  object FDTable2: TFDTable
+    Left = 192
+    Top = 296
+  end
+  object FDTable3: TFDTable
+    Left = 264
+    Top = 304
+  end
+  object FDTable4: TFDTable
+    Left = 320
+    Top = 304
+  end
+  object FDQueryConsulta: TFDQuery
+    Connection = DMConexao.FDConnection1
+    Left = 424
+    Top = 216
+  end
+end

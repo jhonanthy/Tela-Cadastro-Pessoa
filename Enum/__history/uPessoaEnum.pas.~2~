@@ -1,0 +1,11 @@
+unit uPessoaEnum;
+
+interface
+
+type
+TTipoOperacao = (toSelect = 0, toInsert = 1, toUpdate = 2, toDelete = 3, toInsertOrUpdate = 4, toNewInsert = 5, toFilter = 6);
+type
+TTipoPesquisaPessoa = (toCodigo = 0, toNome = 1, toTodosRegistros = 2);
+implementation
+
+end.

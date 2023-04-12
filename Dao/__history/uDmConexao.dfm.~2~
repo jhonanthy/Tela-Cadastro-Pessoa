@@ -1,0 +1,17 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 486
+  Width = 768
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      
+        'Database=C:\Users\jhona\Documents\Embarcadero\Studio\Projects\Si' +
+        'sPessoaCad\Base_dados\DB_SISCADASTROPESSOA.FDB'
+      'User_Name=SYSDBA'
+      'Password=masterkey'
+      'DriverID=FB')
+    LoginPrompt = False
+    Left = 48
+    Top = 56
+  end
+end

@@ -1,0 +1,47 @@
+unit uLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls,
+  uDmConexao, uCadastroPessoa;
+
+type
+  TfrmLogin = class(TForm)
+    Panel1: TPanel;
+    edtLogin: TEdit;
+    edtSenha: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    sbEntrar: TSpeedButton;
+    procedure sbEntrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmLogin.sbEntrarClick(Sender: TObject);
+begin
+  if not DMConexao.AutenticaEntrada(trim(edtLogin.Text),trim(edtSenha.Text)) then
+     Application.MessageBox('Login ou Senha Incorreta , tente novamente','Informação',MB_OK + MB_ICONINFORMATION);
+
+ with TfrmCadastro.Create(self) do
+ try
+   showmodal;
+ finally
+   free;
+ end;
+ Close;
+
+end;
+
+end.

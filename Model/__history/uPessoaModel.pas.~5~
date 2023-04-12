@@ -1,0 +1,69 @@
+unit uPessoaModel;
+
+interface
+
+uses
+   System.SysUtils;
+
+type
+  TPessoa = class
+  private
+    FCodigoPessoa: Integer;
+    FNome: string;
+    FUsuario: string;
+    FSenha: string;
+    FDataInclusao: TDate;
+    FDataAlteracao: TDate;
+    procedure SetCodigoPessoa(const Value: Integer);
+    procedure SetNome(const Value: string);
+    procedure SetUsuario(const Value: string);
+    procedure SetSenha(const Value: string);
+    procedure SetDataInclusao(const Value: TDate);
+    procedure SetDataAlteracao(const Value: TDate);
+    { private declarations }
+  public
+    property CodigoPessoa: Integer read FCodigoPessoa write SetCodigoPessoa;
+    property Nome: string read FNome write SetNome;
+    property Usuario: string read FUsuario write SetUsuario;
+    property Senha: string  read FSenha write SetSenha;
+    property DataInclusao: TDate read FDataInclusao write SetDataInclusao;
+    property DataAlteracao: TDate read FDataAlteracao write SetDataAlteracao;
+  end;
+
+implementation
+
+{ TPessoa }
+
+procedure TPessoa.SetCodigoPessoa(const Value: Integer);
+begin
+  FCodigoPessoa := Value;
+end;
+
+procedure TPessoa.SetDataAlteracao(const Value: TDate);
+begin
+  FDataAlteracao := Date;
+end;
+
+procedure TPessoa.SetDataInclusao(const Value: TDate);
+begin
+  FDataInclusao := Date;
+end;
+
+procedure TPessoa.SetNome(const Value: string);
+begin
+  if Value = ''  then
+  raise Exception.Create('Não foi informado um nome , por favor informar!');
+  FNome := Value;
+end;
+
+procedure TPessoa.SetSenha(const Value: string);
+begin
+  FSenha := Value;
+end;
+
+procedure TPessoa.SetUsuario(const Value: string);
+begin
+  FUsuario := Value;
+end;
+
+end.

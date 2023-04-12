@@ -1,0 +1,37 @@
+unit uPessoaModel;
+
+interface
+
+uses
+   System.SysUtils,;
+
+type
+  TPessoa = class
+  private
+    FCodigoPessoa: Integer;
+    FNome: string;
+    procedure SetCodigoPessoa(const Value: Integer);
+    procedure SetNome(const Value: string);
+    { private declarations }
+  public
+    property CodigoPessoa: Integer read FCodigoPessoa write SetCodigoPessoa;
+    property Nome: string read FNome write SetNome;
+  end;
+
+implementation
+
+{ TPessoa }
+
+procedure TPessoa.SetCodigoPessoa(const Value: Integer);
+begin
+  FCodigoPessoa := Value;
+end;
+
+procedure TPessoa.SetNome(const Value: string);
+begin
+  if Value = ''  then
+  raise Exception.Create('Não foi informado um nome , por favor informar!');
+  FNome := Value;
+end;
+
+end.

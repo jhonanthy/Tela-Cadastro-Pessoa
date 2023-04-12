@@ -1,0 +1,23 @@
+program SisPessoaCad;
+
+uses
+  Vcl.Forms,
+  uCadastroPessoa in 'View\uCadastroPessoa.pas' {frmCadastro},
+  uPessoaModel in 'Model\uPessoaModel.pas',
+  uLogin in 'View\uLogin.pas' {frmLogin},
+  uPessoaController in 'Controler\uPessoaController.pas',
+  uDmConexao in 'Dao\uDmConexao.pas' {DMConexao: TDataModule},
+  uDmPessoa in 'Dao\uDmPessoa.pas' {DMPessoa: TDataModule},
+  uPessoaEnum in 'Dao\uPessoaEnum.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmCadastro, frmCadastro);
+  Application.CreateForm(TfrmLogin, frmLogin);
+  Application.CreateForm(TDMConexao, DMConexao);
+  Application.CreateForm(TDMPessoa, DMPessoa);
+  Application.Run;
+end.
